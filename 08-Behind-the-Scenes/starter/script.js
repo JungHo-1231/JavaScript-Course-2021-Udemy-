@@ -1,44 +1,28 @@
 'use strict';
 
-const myName = "Jonas";
+const jonas ={
+    firstname :'Jonas',
+    year: 1991,
+    calcAge :function (){
+        console.log(this);
+        console.log(2037 - this.year);
 
-if (myName === 'Jonas') {
-    const job = 'teacher';
-    console.log(`Jone is a ${job}`);
-    const age = 2037 - 1989;
-    console.log(age);
-    // console.log(x);
-}
+        const isMillenial = () => {
+            console.log(this.year >= 1981 && this.year <= 1996);
+        };
+        isMillenial();
+    },
 
-// console.log(me);
-// console.log(job);
-// console.log(year);
+    greet : () => console.log(`Hey ${this.firstname}`),
+};
 
-var me = "jonas";
-let job = 'teacher';
-const year = 1991;
 
-// Functions
-console.log(addDecl(2, 3));
-// console.log(addExpr(2,3));
-// console.log(addArrow(2,3));
+jonas.greet();
+jonas.calcAge()
 
-function addDecl(a, b) {
+// arguments keyword
+const addExpr = function (a,b) {
     return a + b;
-}
+};
 
-const addExpr = function (a, b) {
-    return a + b;
-}
-
-const addArrow = (a, b) => a + b;
-
-// Example
-console.log(numProducts);
-if (!numProducts) deleteShoppingCart();
-
-const numProducts = 10;
-
-function deleteShoppingCart() {
-    console.log('All products deleted!');
-}
+var addArrow = (a,b) => a + b;
